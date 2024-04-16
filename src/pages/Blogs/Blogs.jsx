@@ -57,6 +57,14 @@ export const Blogs = () => {
         console.log(blogs)
     })
 
+if(blogs.length === 0){
+    return(
+        <div className={styles.container}>
+            <h1 className={styles.heading}>Recent Blogs</h1>
+        </div>
+    )
+}
+
 
   return (
     <div className={styles.container}>

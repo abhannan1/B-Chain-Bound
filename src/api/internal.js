@@ -8,6 +8,33 @@ const api = axios.create({
         "Content-Type":"application/json"
     }
 })
+
+api.interceptors.response.use(
+    (config)=> config,
+    async (error) => {
+        const originalReq = error.config;
+        
+        const errorMsg = error.response && error.response.data && error.response.data.message
+        
+        if(errorMsg === "Unauthorized" && error?.response?.status === 401 && !originalReq?._isRetry){
+            try{
+                await axios.get(`${process.env.REACT_APP_INTERNAL_API_PATH}/refresh`,{
+                    withCredentials:true
+                })
+                console.log("refresh")
+                await api.request(originalReq)
+                
+            }catch(error){
+                console.log("refresh error")
+                return error
+            }
+        }
+        throw error
+    }
+)
+
+export default api
+
 const apiEndPoint = axios.create({
     baseURL:process.env.REACT_APP_INTERNAL_API_PATH,
     withCredentials:true,
@@ -16,11 +43,10 @@ const apiEndPoint = axios.create({
     }
 })
 
-// api.interceptors.response.use(
-//     (response)=> response,
-//     (error) =>  Promise.reject(error)
-// )
-
+apiEndPoint.interceptors.response.use(
+    (response)=> response,
+    (error) =>  Promise.reject(error)
+)
 
 
 
@@ -30,7 +56,7 @@ export const login = async (data) => {
     
     let response
     try{
-        response = apiEndPoint.post('/login', data)
+        response = await apiEndPoint.post('/login', data)
     }catch(error){
         return error
     }
@@ -191,28 +217,4 @@ export const deleteComment = async(id) =>{
 }
 
 
-api.interceptors.response.use(
-    (config)=> config,
-    async (error) => {
-        const originalReq = error.config;
-        
-        const errorMsg = error.response && error.response.data && error.response.data.message
-        
-        if(errorMsg === "Unauthorized" || error.response.status === 401 || !originalReq._isRetry){
-            try{
-                await axios.get(`${process.env.REACT_APP_INTERNAL_API_PATH}/refresh`,{
-                    withCredentials:true
-                })
-                console.log("refresh")
-                await api.request(originalReq)
-                
-            }catch(error){
-                console.log("refresh error")
-                return error
-            }
-        }
-        throw error
-    }
-)
 
-export default api
