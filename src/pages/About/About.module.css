@@ -1,0 +1,124 @@
+.aboutWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    /* justify-content: end; */
+}
+
+
+.body{
+    /* border: 1px solid white; */
+    flex: 1;    
+    width: 100%;
+    height: calc(100vh - 250px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+}
+
+.left{
+    /* border: 1px solid white; */
+    width: 60%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 250px);
+
+
+}
+
+.right{
+    /* border: 1px solid white; */
+    width: 40%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.left img{
+    max-width:  60%;
+    border-radius: 5px;
+    height: calc(100vh - 300px);
+
+} 
+
+.aboutUs{
+    font-size: xx-large;
+    z-index: 99;
+    position: absolute;
+    top: 20%;
+    left: 32%;
+    background-color: transparent;
+    background: transparent;
+    /* border: 1px solid white; */
+
+}
+
+.aboutUsDetails{
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    width: 50%;
+    background-color: transparent;
+    background: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    display: block;
+    /* border: 1px solid white; */
+
+}
+
+.footer{
+    /* background-color: antiquewhite; */
+    /* border: 1px solid white; */
+    background-color: rgba(255,255,255, 0.1);
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.contactHeading{
+    font-size: large;
+    font-weight: bold;
+}
+
+.footer div{
+
+    background-color: transparent;
+}
+
+@media screen and (max-width:600px) {
+    .left{
+        width: 80%;
+
+    }
+    .left img{
+        min-width: 100%;
+    }
+    .aboutUsDetails{
+        width: 80%;
+        left: 10%;
+    }
+    .aboutUs{
+        width: 100%;
+        left: 5%;
+    }
+    
+}
+
+@media screen and (max-width:300px) {
+    .left{
+        width: 90%;
+    }
+    .right{
+        width: 0%;
+    }
+}

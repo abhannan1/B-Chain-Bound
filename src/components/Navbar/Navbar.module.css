@@ -1,0 +1,156 @@
+.navbar {
+    z-index: 1;
+    width: 95vw;
+    min-height: fit-content;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    /* background:linear-gradient(to right, black,transparent); */
+
+  }
+
+  .navSpan{
+    margin-bottom: 10px;
+    position: sticky;
+    top: 0;
+    /* background:linear-gradient(to right, black 60%, transparent); */
+
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .logo{
+    font-size: 27px;
+    font-weight: 800;
+  }
+
+  .link {
+    color: gray;
+    font-size: 1.35rem;
+    font-weight: bold;
+  }
+  
+  .active {
+    color:  blue;
+    font-size: 20px;
+  }
+  
+
+.loginButton, .logoutButton{
+    border-radius: 0.7rem;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.55rem 1rem;
+    font-size: large;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: cornflowerblue;
+    border: 1px solid transparent;
+    outline: none;
+}
+
+
+.shiftButton{
+  z-index: 2;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  border-radius: 0.7rem;
+  width: fit-content;
+  height: fit-content;
+  /* padding: 0.25rem 0.5rem; */
+  font-size: 1rem;
+  font-weight: 1rem;
+  cursor: pointer;
+  /* background-color: cornflowerblue; */
+  color: white;
+  /* border: 1px solid transparent; */
+  border: none;
+  outline: none;
+  visibility: hidden;
+}
+
+.shiftButton svg {
+  color: rgb(179, 245, 223);
+  width: 2rem;
+}
+
+.shiftButton:active{
+  border: none;
+  outline: none;
+}
+
+.loginButton:hover {
+  border-color: #ffff;
+  color: black;
+  background-color: aliceblue;
+}
+
+.signUpButton{
+    border-radius: 0.7rem;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.55rem 1rem;
+    font-size: large;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: #3861fb;
+    border: 1px solid transparent;
+    outline: none;
+}
+
+.logoutButton:hover {
+    border-color: #ffff;
+    color: black;
+    background-color: #5a78e1;
+  }
+
+.separator{
+  height: 1px;
+  width: 100%;
+  margin-top: 0.7rem;
+  /* background: linear-gradient(to right, transparent, gray, transparent); */
+  background:linear-gradient(to right, transparent, lightblue 50%, transparent);
+  margin-bottom: 10px;
+  }
+
+  @media screen and (max-width:768px){
+    .shiftButton{
+      visibility: visible;
+    }
+
+    .navbar{
+      display: grid;
+      grid-template-columns: auto;
+      /* margin: 1.5rem 0; */ 
+        }
+    
+    /* .separator{
+      margin-bottom: 1rem;
+    } */
+    
+
+  }
+  
+  @media screen and (max-width: 1100px) {
+    .link {
+      font-size: 1.15rem;
+    }
+    .logo{
+      font-size: 1.5rem;
+    }
+    .signUpButton, .loginButton, .logoutButton{
+      font-size: 1rem;
+
+    }
+
+
+  }

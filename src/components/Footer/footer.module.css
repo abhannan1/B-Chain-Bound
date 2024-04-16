@@ -1,0 +1,8 @@
+.footer{
+    align-self: center;
+    text-align: center;
+    font-weight: bold;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}

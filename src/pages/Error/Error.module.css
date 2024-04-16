@@ -1,0 +1,44 @@
+.errorWrapper{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.homeLink{
+    border-radius: 0.7rem;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.55rem 1rem;
+    font-size: large;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: #3861fb;
+    border: 1px solid transparent;
+    outline: none;
+    margin-left: 1rem;
+
+}
+
+.errorHeading{
+    color: rgba(255, 0, 0, 0.703);
+}
+
+.homeLink:hover {
+    border-color: #ffff;
+    color: black;
+    background-color: #5a78e1;
+  }
+
+  .errorMsg{
+    font-size: large;
+    font-weight: bold;
+    margin-top: 1em ;
+
+  }
