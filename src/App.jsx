@@ -26,7 +26,6 @@ import { useEffect, useRef } from "react";
 import { getArticles, resetArticles } from "./store/articlesSlice/articlesSlice";
 
 function App() {
-  const isAuth = useSelector((state) => state.user.auth);
   const isLoading = useAutoLogin();
   const dispatch = useDispatch()
   // const navigate = useNavigate()
@@ -55,12 +54,12 @@ function App() {
             <SharedLayoutAuth />        
         }>
           <Route path="login" element={
-            <PublicRoute isAuth={isAuth}>          
+            <PublicRoute>          
               <Login />
             </PublicRoute>
           } />
           <Route path="signUp" element={
-              <PublicRoute isAuth={isAuth}>
+              <PublicRoute>
                 <Register />
               </PublicRoute>
           } />
@@ -74,7 +73,7 @@ function App() {
           <Route
             path="blogs"
             element={
-              <ProtectedRoutes isAuth={isAuth}>
+              <ProtectedRoutes>
                 <Blogs />
               </ProtectedRoutes>
             }
@@ -83,7 +82,7 @@ function App() {
           <Route
             path="blog/:id"
             element={
-              <ProtectedRoutes isAuth={isAuth}>
+              <ProtectedRoutes>
                 <BlogDetail />
               </ProtectedRoutes>
             }
@@ -94,7 +93,7 @@ function App() {
           <Route
             path="submit"
             element={
-              <ProtectedRoutes isAuth={isAuth}>
+              <ProtectedRoutes>
                 <EditSubmitBlog />
               </ProtectedRoutes>
             }

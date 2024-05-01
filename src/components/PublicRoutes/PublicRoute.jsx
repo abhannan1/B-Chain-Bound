@@ -1,10 +1,13 @@
 import React, { Children, useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router-dom'
 
-export const PublicRoute = ({isAuth, children}) => {
+export const PublicRoute = ({children}) => {
     const navigate = useNavigate()
     const location = useLocation()
     const [isVerified, setIsVerified] = useState()
+    const isAuth = useSelector((state) => state.user.auth);
+
 
     useEffect(()=>{
         if(isAuth){

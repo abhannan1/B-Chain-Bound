@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { Navigate, useLocation, useNavigate } from 'react-router-dom'
 import api from '../../api/internal'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { resetUser } from '../../store/userSlice/userSlice'
 
-const ProtectedRoutes = ({isAuth, children}) => {
+const ProtectedRoutes = ({children}) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const location = useLocation()
     const [isVerified, setIsVerified] = useState(false)
+    const isAuth = useSelector((state) => state.user.auth);
+
     
 
 

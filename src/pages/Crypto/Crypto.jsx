@@ -60,8 +60,8 @@ export const Crypto =() => {
 
     return (
         <>
-            <p className={styles.heading}>CryptoCurrencies</p>
         <div className={styles.container} >
+        <p className={styles.heading}>CryptoCurrencies</p>
         <div className={styles.tableWrapper} >
             <table className={styles.table} >
 

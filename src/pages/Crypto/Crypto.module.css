@@ -1,5 +1,6 @@
 
 .container{
+    z-index: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -13,6 +14,7 @@
 }
 
 .tableWrapper{
+    z-index: 0;
     margin-top: 0;
     width: 80%;
     display: flex;
@@ -29,6 +31,7 @@
 }
 
 .table{
+    z-index: 0;
     width: 100%;
     border-collapse: collapse;
     margin: 10px;
